@@ -27,4 +27,7 @@ public class Calendar implements Serializable {
     @Column(name = "hora")
     private LocalTime time;
 
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 }
