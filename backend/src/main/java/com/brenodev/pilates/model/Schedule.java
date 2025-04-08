@@ -8,13 +8,15 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity(name = "tb_calendario")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Calendar implements Serializable {
+public class Schedule implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -30,4 +32,12 @@ public class Calendar implements Serializable {
     @ManyToOne
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
+
+    @ManyToMany
+    @JoinTable(
+            name = "calendar_participants",
+            joinColumns = @JoinColumn(name = "schedule _id"),
+            inverseJoinColumns = @JoinColumn(name = "participants_id")
+    )
+    private Set<Participant> participantsSet = new HashSet<>();
 }

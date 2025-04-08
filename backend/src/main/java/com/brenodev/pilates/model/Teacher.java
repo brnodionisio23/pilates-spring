@@ -12,6 +12,6 @@ import java.util.Set;
 public class Teacher extends Person {
 
     @OneToMany(mappedBy = "teacher")
-    private Set<Calendar> calendarsSet = new HashSet<>();
+    private Set<Schedule> scheduleSet = new HashSet<>();
 
 }
