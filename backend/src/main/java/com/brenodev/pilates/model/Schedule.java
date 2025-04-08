@@ -36,7 +36,7 @@ public class Schedule implements Serializable {
     @ManyToMany
     @JoinTable(
             name = "calendar_participants",
-            joinColumns = @JoinColumn(name = "schedule _id"),
+            joinColumns = @JoinColumn(name = "schedule_id"),
             inverseJoinColumns = @JoinColumn(name = "participants_id")
     )
     private Set<Participant> participantsSet = new HashSet<>();
