@@ -32,4 +32,10 @@ public abstract class Person implements Serializable {
     @Column(name = "nascimento")
     private LocalDate birth;
 
+    @Column(name = "email")
+    private String mail;
+
+    @Column(name = "contato")
+    private String phone;
+
 }
