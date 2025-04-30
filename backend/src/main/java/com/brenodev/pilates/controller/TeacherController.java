@@ -12,13 +12,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/teacher")
-public class teacherController {
+public class TeacherController {
 
     @Autowired
     TeacherService teacherService;
 
     @GetMapping("/allteacher")
-    public ResponseEntity<List<Teacher>> getAllTeacher(){
-        return teacherService.readList();
+    public ResponseEntity<List<Teacher>> getAllTeachers() {
+        List<Teacher> teachers = teacherService.findAll();
+        return ResponseEntity.ok(teachers);
     }
 }
