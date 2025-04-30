@@ -13,6 +13,10 @@ public class TeacherService {
     @Autowired
     private TeacherRepository teacherRepository;
 
+    public Teacher save(Teacher teacher){
+        return teacherRepository.save(teacher);
+    }
+
     public List<Teacher> findAll() {
         List<Teacher> teachers = teacherRepository.findAll();
         return teachers;
